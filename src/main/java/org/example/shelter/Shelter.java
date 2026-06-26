@@ -9,7 +9,7 @@ public class Shelter <T extends Animal>{
     private final List<T> animals = new ArrayList<>();
 
     public void addAnimal(T animal){
-        // TODO
+        animals.add(animal);
     }
 
     public List<T> getAllAnimals(){
