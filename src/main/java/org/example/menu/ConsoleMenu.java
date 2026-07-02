@@ -1,7 +1,7 @@
-package two.menu;
+package org.example;
 
-import two.model.*;
-import two.shelter.Shelter;
+import org.example.*;
+import org.shelter.Shelter;
 
 import java.util.Scanner;
 
