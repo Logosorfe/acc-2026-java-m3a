@@ -1,5 +1,6 @@
-package org.example.model;
+package two.model;
 
 public enum AdoptionStatus {
-    AVAILABLE,ADOPTED
+    AVAILABLE,
+    ADOPTED;
 }
