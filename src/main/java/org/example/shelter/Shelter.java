@@ -1,33 +1,48 @@
 package org.example.shelter;
 
+import org.example.model.AdoptionStatus;
 import org.example.model.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Shelter <T extends Animal>{
+public class Shelter<T extends Animal> {
     private final List<T> animals = new ArrayList<>();
 
-    public void addAnimal(T animal){
+    public void addAnimal(T animal) {
         animals.add(animal);
     }
 
-    public List<T> getAllAnimals(){
-        // TODO
-        return null;
+    public List<T> getAllAnimals() {
+        return animals;
     }
 
-    public List<T> findBySpecies(String species){
-        // TODO
-        return null;
+    public List<T> findBySpecies(String species) {
+        List<T> list = new ArrayList<>();
+        for (T animal : animals) {
+            if (animal.getSpecies().equalsIgnoreCase(species)) {
+                list.add(animal);
+            }
+        }
+        return list;
     }
 
-    public List<T> findAvailableAnimals(){
-        // TODO
-        return null;
+    public List<T> findAvailableAnimals() {
+        List<T> list = new ArrayList<>();
+        for (T animal : animals) {
+            if (animal.getAdoptionStatus() == AdoptionStatus.AVAILABLE) {
+                list.add(animal);
+            }
+        }
+        return list;
     }
 
-    public void markAsAdopted(String id){
-        // TODO
+    public void markAsAdopted(String id) {
+        for (T animal : animals) {
+            if (animal.getId().getValue().equals(id)) {
+                animal.markAsAdopted();
+                break;
+            }
+        }
     }
 }
