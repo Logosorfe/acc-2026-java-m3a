@@ -45,3 +45,7 @@ src
     - Animal
     - Adoption Date
     - Adopter Name
+## Teacher's comments
+``` text
+AnimalId is a good class to have its equals() method overridden, to compare ID strings directly instead of comparing values in shelter class. getAllAnimals() returns the original list, so outside code could change shelter contents directly. Safer would be returning a copy. markAsAdopted() does not tell whether an animal was actually found, so menu prints "marked as adopted" even for a wrong ID. start() method is getting long, good rule if possible it should fit in a screen, by possible -> have you tried extracting a method. Even if an if statement, that is followed by single line of code is permitted by syntax, it is always preferred to still use {}. Comparing enums with == is valid, however prefer to use equals anyway and start from given value to avoid NPE -> AdoptionStatus.AVAILABLE.equals(animal.getAdoptionStatus()).
+```
